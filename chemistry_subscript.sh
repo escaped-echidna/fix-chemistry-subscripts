@@ -1,10 +1,14 @@
-#This changes all N<sub>2</sub>O, NO<sub>3</sub><sup>-</sup> etc in all .txt files in a directory (e.g. my notational velocity directory) with the proper subscripting
+# This changes all N<sub>2</sub>O, NO<sub>3</sub><sup>-</sup> etc in all 
+#.txt files in a directory (e.g. my notational velocity directory) with 
+# the proper subscripting
 
-date >> /Users/Rachel/Dropbox/automated_scripts/subscript_log.txt
+# optionally add the current date to a log file to keep track of when 
+# the script is run:
 
-cd /Users/Rachel/Library/Application\ Support/Notational\ Data/
+# date >> /Users/path/to/file
 
-#This only modifies the files that are listed as “modified” or “untracked” by git
+# This only modifies the files that are listed as “modified” or “untracked” by git
+# You can add other chemical formulas (e.g. CO2, CH4)
 
 git ls-files -o -m -z | xargs -0 sed -i '' 's/NO2-/NO<sub>2<\/sub><sup>-<\/sup>/g'
 git ls-files -o -m -z | xargs -0 sed -i '' 's/NO3-/NO<sub>3<\/sub><sup>-<\/sup>/g'
