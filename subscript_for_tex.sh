@@ -1,8 +1,8 @@
-#This changes all N<sub>2</sub>O, NO<sub>3</sub><sup>-</sup> etc in all .txt files in a directory (e.g. my tex file directories) with the proper subscripting for latex:
+# This changes all N<sub>2</sub>O, NO<sub>3</sub><sup>-</sup> etc in all .txt files in a directory (e.g. my tex file directories) with the proper subscripting for latex:
+# This works with the 'upgreek' and 'amsmath' and 'mhchem' for greek letters and math/chem formulae
+date >> subscript_tex_log.txt
 
-date >> ~/Dropbox/automated_scripts/subscript_tex_log.txt
-
-cd ~/Dropbox/post_PhD/transect_paper/marine_chemistry_submission/tex_files/text_sections/
+cd ~/path/to/tex_files/
 
 sed -ie 's:d15N-N2O:\$\updelta\$\\ce{^{15}N-N2O}:g' *.tex
 sed -ie 's:d15N-NO3-:\$\updelta\$\\ce{^{15}N-NO3-}:g' *.tex
@@ -38,7 +38,6 @@ sed -ie 's:under-saturat:undersaturat:g' *.tex
 sed -ie 's: \\%:\\%:g' *.tex
 sed -ie 's: \\%):\\%):g' *.tex
 
-#$upmu$mol \ce{L^{-1}}
 
 
 
